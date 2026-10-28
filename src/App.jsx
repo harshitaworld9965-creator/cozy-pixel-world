@@ -20,9 +20,29 @@ function App() {
         start: 'top 80%',
         end: "top 30%",
         markers: true,
+        scrub:true,
         toggleActions: "play none none reset",
       },
     });
+
+    gsap.set(".flower", {
+      opacity:0,
+      y:40,
+    });
+
+    ScrollTrigger.batch(".flower", {
+      onEnter: (elements) => {
+        gsap.to(elements, {
+          opacity:1,
+          y:0,
+          stagger:0.15,
+          duration:0.6,
+          ease:"back.out(1.7)",
+          overwrite:true,
+        });
+      },
+      start: "top 85%",
+    })
   });
 
   return (
@@ -32,6 +52,16 @@ function App() {
         <h1>Welcome to<br />Frog Hollow 🐸</h1>
         <p>Scroll down to meet your tiny friend.</p>
         <span className="scroll-note">↓ SCROLL DOWN ↓</span>
+      </section>
+
+      <section className="pinned-world">
+        <div className="pinned-content">
+          <p>✿ A LITTLE PAUSE ✿</p>
+          <h2>Stay a while.</h2>
+          <div className="pinned-frog">🐸</div>
+          <p>Scroll gently through our little world.</p>
+        </div>
+
       </section>
 
       <section className="frog-scene">

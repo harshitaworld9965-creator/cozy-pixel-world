@@ -85,3 +85,16 @@ h2 {
     opacity: 1;
   }
 }
+
+.flower-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.flower{
+  display: inline-block;
+  font-size: 38px;
+  color: #e98ba7;
+}
