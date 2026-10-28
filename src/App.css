@@ -1,0 +1,87 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  color: #405b48;
+  background: #fff8ed;
+}
+
+.pixel-world {
+  text-align: center;
+}
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #fff0f3;
+}
+
+.intro > p:first-child {
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.15;
+  margin: 25px 0;
+  letter-spacing: -3px;
+  color: #405b48;
+}
+
+.scroll-note {
+  margin-top: 65px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.frog-scene {
+  min-height: 100vh;
+  padding: 100px 24px;
+  background: #e5f3df;
+}
+
+.meadow {
+  height: 260px;
+  max-width: 600px;
+  margin: 0 auto 45px;
+  border: 4px solid #405b48;
+  border-radius: 12px;
+  background: #c8e6c0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.frog {
+  font-size: 85px;
+}
+
+.flower {
+  font-size: 38px;
+  color: #e98ba7;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.frog-scene > p {
+  color: #718b72;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frog {
+    opacity: 1;
+  }
+}
