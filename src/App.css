@@ -98,3 +98,20 @@ h2 {
   font-size: 38px;
   color: #e98ba7;
 }
+
+.pinned-world{
+  min-height: 100vh;
+  background: #dcefe0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.pinned-content h2 {
+  font-size: clamp(40px, 7vw, 72px);
+  margin: 20px 0;
+}
+
+.pinned-frog{
+  font-size: 90px;
+}

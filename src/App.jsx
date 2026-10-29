@@ -43,6 +43,21 @@ function App() {
       },
       start: "top 85%",
     })
+
+    gsap.to(".pinned-frog", {
+      rotation:15,
+      scale:1.3,
+      ease:'none',
+      scrollTrigger: {
+        trigger:".pinned-world",
+        start:'top top',
+        end:"+=500",
+        pin:true, 
+        pinSpacing:false,
+        scrub:1,
+        markers:true,
+      },
+    });
   });
 
   return (
