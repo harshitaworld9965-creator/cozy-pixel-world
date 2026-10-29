@@ -1,106 +1,47 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react"
+import {useGSAP} from "@gsap/react";
 import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-function App() {
+function App(){
   const frogRef = useRef(null);
 
   useGSAP(() => {
     gsap.from(frogRef.current, {
-      y: 120,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
+      y:80,
+      opacity:0,
+      duration:1,
+      ease:'power2.out',
       scrollTrigger: {
         trigger: frogRef.current,
-        start: 'top 80%',
+        start: "top 80%",
         end: "top 30%",
         markers: true,
-        scrub:true,
-        toggleActions: "play none none reset",
-      },
-    });
-
-    gsap.set(".flower", {
-      opacity:0,
-      y:40,
-    });
-
-    ScrollTrigger.batch(".flower", {
-      onEnter: (elements) => {
-        gsap.to(elements, {
-          opacity:1,
-          y:0,
-          stagger:0.15,
-          duration:0.6,
-          ease:"back.out(1.7)",
-          overwrite:true,
-        });
-      },
-      start: "top 85%",
-    })
-
-    gsap.to(".pinned-frog", {
-      rotation:15,
-      scale:1.3,
-      ease:'none',
-      scrollTrigger: {
-        trigger:".pinned-world",
-        start:'top top',
-        end:"+=500",
-        pin:true, 
-        pinSpacing:false,
-        scrub:1,
-        markers:true,
       },
     });
   });
 
-  return (
-    <main className="pixel-world">
-      <section className="intro">
-        <p>✿ A LITTLE WORLD OF MAGIC</p>
-        <h1>Welcome to<br />Frog Hollow 🐸</h1>
-        <p>Scroll down to meet your tiny friend.</p>
-        <span className="scroll-note">↓ SCROLL DOWN ↓</span>
-      </section>
+  return(
+  <main className="world">
+    <section className="welcome">
+      <p className="eyebrow">✿ FROG HOLLOW ✿</p>
+      <h1>Welcome to our little world.</h1>
+      <p>Scroll down to discover a tony friend.</p>
+      <span className="scroll-hint">KEEP EXPLORING</span>
+    </section>
 
-      <section className="pinned-world">
-        <div className="pinned-content">
-          <p>✿ A LITTLE PAUSE ✿</p>
-          <h2>Stay a while.</h2>
-          <div className="pinned-frog">🐸</div>
-          <p>Scroll gently through our little world.</p>
-        </div>
-
-      </section>
-
-      <section className="frog-scene">
-        <div className="meadow">
-
-          <div className="flower-row">
-            <span className="flower">✿</span>
-            <span className="flower">❀</span>
-            <span className="flower">✿</span>
-            <span className="flower">✾</span>
-            <span className="flower">❀</span>
-          </div>
-
-
-          <div className="frog" ref={frogRef}>
-            🐸
-          </div>
-
-        </div>
-
-        <h2>A tiny friend awaits!</h2>
-        <p>Every little adventure starts somewhere.</p>
-      </section>
-    </main>
+    <section className="meadow">
+      <div className="meadow-card">
+        <p className="eyebrow">A FRIEND IS WAITING.</p>
+        <div className="frog" ref={frogRef}>🐸</div>
+        <h2>Meet Pip!</h2>
+        <p>Your tiny companion for today's adventure.</p>
+      </div>
+    </section>
+  </main>
   );
 }
 
