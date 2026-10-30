@@ -20,6 +20,7 @@ function App(){
         start: "top 80%",
         end: "top 30%",
         markers: true,
+        toggleActions:"play none none none"
       },
     });
   });
